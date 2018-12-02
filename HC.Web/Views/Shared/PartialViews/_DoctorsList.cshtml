@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HC.Core.ViewModels.DoctorViewModel>
+
+<div class="row" style="padding-top:10px;">
+    @foreach (var item in Model)
+    {
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span><i class="glyphicon glyphicon-hand-right"></i><strong>@item.Name</strong></span>
+                <span class=" pull-right"><i class="glyphicon"></i><strong> @item.SpecializationName</strong></span>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+                <span hidden>@item.Id</span>
+                <h5>@item.SpecializationName</h5>
+                <h5>@item.Degree</h5>
+                <h5>
+
+                    <span class="pull-left"><i class="glyphicon glyphicon-map-marker"></i> @item.Address</span>
+                    <span class="pull-right">@item.Contact <i class="glyphicon glyphicon-phone-alt"></i></span>
+                </h5>
+            </div>
+            <div class="panel-footer">
+                <div>
+
+                    <span class="pull-right">Comment <i class="glyphicon glyphicon-comment"></i></span>
+                    <span class="pull-left">
+                        <span> <i class="glyphicon glyphicon-thumbs-up"></i> Vote</span>
+                        <span style="margin-left:10px;"> <i class="glyphicon glyphicon-thumbs-down"></i> Vote</span>
+                    </span>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    }
+</div>
+

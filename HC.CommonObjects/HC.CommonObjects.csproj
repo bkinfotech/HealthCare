@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD41E60E-7649-42AA-9E1A-49A62176D9FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HC.CommonObjects</RootNamespace>
+    <AssemblyName>HC.CommonObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HC.Infrastructure\EntityFramework\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HC.Infrastructure\EntityFramework\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainModel\City.cs" />
+    <Compile Include="DomainModel\Country.cs" />
+    <Compile Include="DomainModel\Doctor.cs" />
+    <Compile Include="DomainModel\Specialization.cs" />
+    <Compile Include="DomainModel\State.cs" />
+    <Compile Include="DomainModel\User.cs" />
+    <Compile Include="HealthCareDbContext.cs" />
+    <Compile Include="Migrations\201810240952177_InitialCreate.cs" />
+    <Compile Include="Migrations\201810240952177_InitialCreate.Designer.cs">
+      <DependentUpon>201810240952177_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810241227027_Specialization_AllowNull.cs" />
+    <Compile Include="Migrations\201810241227027_Specialization_AllowNull.Designer.cs">
+      <DependentUpon>201810241227027_Specialization_AllowNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810260745229_Doctor_Table_Added.cs" />
+    <Compile Include="Migrations\201810260745229_Doctor_Table_Added.Designer.cs">
+      <DependentUpon>201810260745229_Doctor_Table_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810260749185_Doctor_Table_LatLong.cs" />
+    <Compile Include="Migrations\201810260749185_Doctor_Table_LatLong.Designer.cs">
+      <DependentUpon>201810260749185_Doctor_Table_LatLong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810260806248_Doctor_Table_Added1.cs" />
+    <Compile Include="Migrations\201810260806248_Doctor_Table_Added1.Designer.cs">
+      <DependentUpon>201810260806248_Doctor_Table_Added1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810261049474_Doctor_Table_IsInternalCreated_ColumnAdded.cs" />
+    <Compile Include="Migrations\201810261049474_Doctor_Table_IsInternalCreated_ColumnAdded.Designer.cs">
+      <DependentUpon>201810261049474_Doctor_Table_IsInternalCreated_ColumnAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810261053050_User_Table_IsInternalUser_Add.cs" />
+    <Compile Include="Migrations\201810261053050_User_Table_IsInternalUser_Add.Designer.cs">
+      <DependentUpon>201810261053050_User_Table_IsInternalUser_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810261100171_User_Table_IsInternalUser_Modify.cs" />
+    <Compile Include="Migrations\201810261100171_User_Table_IsInternalUser_Modify.Designer.cs">
+      <DependentUpon>201810261100171_User_Table_IsInternalUser_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810240952177_InitialCreate.resx">
+      <DependentUpon>201810240952177_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241227027_Specialization_AllowNull.resx">
+      <DependentUpon>201810241227027_Specialization_AllowNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810260745229_Doctor_Table_Added.resx">
+      <DependentUpon>201810260745229_Doctor_Table_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810260749185_Doctor_Table_LatLong.resx">
+      <DependentUpon>201810260749185_Doctor_Table_LatLong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810260806248_Doctor_Table_Added1.resx">
+      <DependentUpon>201810260806248_Doctor_Table_Added1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810261049474_Doctor_Table_IsInternalCreated_ColumnAdded.resx">
+      <DependentUpon>201810261049474_Doctor_Table_IsInternalCreated_ColumnAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810261053050_User_Table_IsInternalUser_Add.resx">
+      <DependentUpon>201810261053050_User_Table_IsInternalUser_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810261100171_User_Table_IsInternalUser_Modify.resx">
+      <DependentUpon>201810261100171_User_Table_IsInternalUser_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<HC.Core.ViewModels.SpecializationViewModel>
+
+<div class="row" style="padding-top:10px;">
+    @foreach (var item in Model)
+    {
+
+        <label class="control-label label-normal col-md-12">
+            <input type="checkbox" value="@item.Id" /> <span> @item.Name</span>
+        </label>
+    }
+</div>

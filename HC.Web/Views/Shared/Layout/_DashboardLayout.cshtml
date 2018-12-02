@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HealthCare-Let's Together Serve Humanity - BK InfoTech</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Custom/custom-design.css" rel="stylesheet" />
+    <script src="~/Scripts/CustomScript/common-script.js"></script>
+    <style>
+
+        .modal {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 45%;
+            left: 47%;
+            /*background-color: Black;*/
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+            -moz-opacity: 0.8;
+            display: none;
+        }
+
+        .center {
+            z-index: 1000;
+            padding: 10px;
+            color: green;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: White;
+            border-radius: 10px;
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+
+        .centerimg {
+            height: 128px;
+            width: 128px;
+        }
+    </style>
+</head>
+<body style="padding-top:10px;background-color:#fff">
+    <div id="progress" class="modal">
+        <div class="center">
+            <p>Loading . . .</p>
+            @*<img src="~/images/loader4.gif" />*@
+        </div>
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-10">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter Doctor or Specialization and hit search at right" style="min-width:100%;font-size:30px;font-weight:bold;height:48px;" />
+                <span class="input-group-addon" style="cursor:pointer" id="btn-search-doctor">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i> Add Doctor
+            </button>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - BK InfoTech</p>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<style>
+    .min-width-full {
+        min-width: 100%;
+    }
+
+    .max-width-full {
+        max-width: 100%;
+    }
+</style>
+
+
+
